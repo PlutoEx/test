@@ -1,4 +1,3 @@
-import './App.css'
 import Input from "./components/Input.tsx";
 
 function App() {

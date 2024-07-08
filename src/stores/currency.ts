@@ -1,12 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { RootState } from './store';
+
+interface CurrencyState {
+  valueUSD: number;
+  valueEUR: number;
+  coef: number;
+}
+
+const initialState: CurrencyState = {
+  valueUSD: 0,
+  valueEUR: 0,
+  coef: 1.07
+};
 
 const currencySlice = createSlice ({
   name: 'currency',
-  initialState: {
-    valueUSD: 0,
-    valueEUR: 0,
-    coef: 1.07
-  },
+  initialState,
   reducers: {
     changeUSD: (state, action) => {
       state.valueUSD = Math.abs(action.payload);
@@ -19,10 +28,10 @@ const currencySlice = createSlice ({
   }
 })
 
-export const getUSDValue = (state) => {
+export const getUSDValue = (state: RootState) => {
   return state.currency.valueUSD;
 };
-export const getEURValue = (state) => {
+export const getEURValue = (state: RootState) => {
   return state.currency.valueEUR;
 };
 

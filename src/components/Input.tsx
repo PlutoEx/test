@@ -1,4 +1,3 @@
-import React from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {getUSDValue, getEURValue, changeUSD, changeEUR} from "../stores/currency.ts";
 import styles from './Input.module.css';
@@ -7,7 +6,7 @@ interface InputProps {
   type: string
 }
 
-const Input = ({type}): InputProps => {
+const Input = ({type}: InputProps) => {
   const currencyUSD = useSelector(getUSDValue);
   const currencyEUR = useSelector(getEURValue);
   const currency = type === 'USD' ? currencyUSD : currencyEUR;
