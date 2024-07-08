@@ -1,4 +1,5 @@
 import Input from "./components/Input.tsx";
+import './App.css'
 
 function App() {
 
